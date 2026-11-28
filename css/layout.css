@@ -113,7 +113,7 @@ footer {
     text-align: center;
 }
 
-.toast {
+.aviso-toast {
     background-color: var(--cafe);
     position: fixed;
     bottom: 25px;

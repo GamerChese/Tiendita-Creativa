@@ -239,7 +239,7 @@ footer hr {
     color: var(--blanco);
 }
 
-.toast.encendido{
+.aviso-toast.encendido{
     opacity: 1;
     visibility: visible;
 }
