@@ -1,24 +1,28 @@
-footer{
+footer {
+    margin-top: 32px;
+    padding: 42px 0 28px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: var(--arena);
     color: var(--cafe);
-    }
-
-
+    text-align: center;
+}
 
 .hero-banner {
-    width: 55%;
+    width: 52%;
     height: auto;
+    object-fit: contain;
 }
 
 .topbar {
     width: 100%;
-    height: 650px;
+    min-height: 620px;
     background-color: var(--cafe);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 28px;
+    padding: 80px 4vw 38px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
@@ -32,21 +36,20 @@ footer{
 
 .menu {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: min(450px, calc(100vw - 40px));
+    top: 16px;
+    right: 16px;
+    width: min(650px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
     height: 55px;
-
     background-color: var(--cafe);
     border-radius: 30px;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
+    flex-wrap: nowrap;
+    padding: 0 5px 0 18px;
     overflow: hidden;
     z-index: 100;
-
     transition: width 0.3s ease;
 }
 
@@ -69,7 +72,7 @@ footer{
 }
 
 .tienda {
-    padding: 60px 40px;
+    padding: 64px 0;
     text-align: center;
     align-items: center;
     color: var(--cafe);
@@ -84,33 +87,107 @@ footer{
 }
 
 .producto {
+    overflow: hidden;
     background-color: var(--blanco);
-    border-radius: 20px;
-    padding: 20px;
+    border: 1px solid rgba(84, 53, 38, 0.12);
+    border-radius: 16px;
     text-align: left;
     transition: transform 0.3s;
     display: flex;
     flex-direction: column;
 }
 
-.selector-categorias{
-    padding: 10px;
+.selector-categorias {
+    max-width: 100%;
+    padding: 10px 14px;
     background-color: var(--blanco);
     width: fit-content;
     margin: 20px auto;
     border-radius: 10px;
 }
 
-.toast{
+.contacto {
+    padding: 56px 20px;
+    background-color: var(--arena);
+    color: var(--cafe);
+    text-align: center;
+}
+
+.toast {
     background-color: var(--cafe);
-    position:fixed;
+    position: fixed;
     bottom: 25px;
-    right: 0px;
+    right: 16px;
     z-index: 55;
     opacity: 0;
     visibility: hidden;
     color: var(--blanco);
-    padding: 8px;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.tienda-modal .modal-content {
+    border: 1px solid rgba(84, 53, 38, 0.16);
+    border-radius: 16px;
+    background: var(--blanco);
+    color: var(--cafe);
+}
+
+.tienda-modal .modal-header,
+.tienda-modal .modal-footer {
+    border-color: rgba(84, 53, 38, 0.14);
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+    border-top: 1px solid rgba(84, 53, 38, 0.2);
+    padding-top: 16px;
+    font-size: 1.15rem;
+}
+
+.carrito-vacio {
+    padding: 24px 0;
+    color: var(--cafe);
+    text-align: center;
+}
+
+.fila-carrito {
+    display: grid;
+    grid-template-columns: 64px minmax(120px, 1fr) auto auto;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid rgba(84, 53, 38, 0.12);
+    padding: 12px 0;
+}
+
+.fila-carrito img {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.fila-carrito-info,
+.controles-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fila-carrito-info {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fila-carrito-info span {
+    font-size: 0.85rem;
+}
+
+.controles-cantidad button {
+    min-width: 30px;
+    border: 1px solid var(--arena);
+    color: var(--cafe);
 }

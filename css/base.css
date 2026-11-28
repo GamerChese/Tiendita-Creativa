@@ -21,5 +21,20 @@ body{
     background-repeat: repeat;
     background-color: var(--crema);
     font-family: 'Lato', sans-serif;
+    color: var(--cafe);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.modo-noche {
+    --crema: #e9e4d8;
+    --arena: #29271f;
+    --terracota: #bb795f;
+    --oliva: #a4b082;
+    --cafe: #f0ece2;
+    --blanco: #24231f;
+    background-image: linear-gradient(rgba(22, 21, 18, 0.92), rgba(22, 21, 18, 0.92)),
+        url(https://www.tilingtextures.com/wp-content/uploads/2025/04/smdi5QnHGn.jpg);
+    background-color: #161512;
+    color: var(--cafe);
 }
 

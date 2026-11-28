@@ -7,34 +7,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
     <title>La Tiendita Creativa</title>
 </head>
 <body>
-    <nav class="menu" id="menu">
+    <nav class="navbar navbar-dark navbar-expand-lg menu" id="menu" aria-label="Navegación principal">
+        <button class="navbar-toggler menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#menu-opciones"
+            aria-controls="menu-opciones" aria-expanded="false" aria-label="Mostrar navegación">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="menu-opciones">
-            <a href="#start">Inicio</a>
-            <a href="#productos">Productos</a>
+        <div class="collapse navbar-collapse menu-opciones" id="menu-opciones">
+            <ul class="navbar-nav align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#start">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li class="nav-item"><button class="btn modo-toggle" id="modo-toggle" type="button" aria-pressed="false">Modo noche</button></li>
+            </ul>
         </div>
 
-        <button class="carrito" aria-label="Ver carrito">
+        <button class="carrito" type="button" aria-label="Ver carrito" data-bs-toggle="modal" data-bs-target="#carritoModal">
             <img src="assets/images/cart.svg" alt="Carrito">
             <span class="contador" id="contador">0</span>
         </button>
-
     </nav>
 
-    <div class="topbar" id="start"> 
+    <header class="topbar" id="start">
         <div class="hero-text">
             <h1>La Tiendita Creativa</h1>
             <p class = "dancing-script-text">Creatividad en cada detalle</p>
         </div>
         
         <img src="assets/images/hero-banner.webp" alt="" class="hero-banner">
-    </div>
+    </header>
 
     <div class="welcome">
         <span>Nuestra esencia</span>
@@ -49,8 +56,8 @@
         </p>
 
         <p>Pasión · Creatividad · Originalidad</p>
-        <br>
-        <p>Número de visitas a esta tienda: <span id="visitas">0</span></p>
+        
+        <p class = "visit-counter">Número de visitas a esta tienda: <span id="visitas">0</span></p>
     </div>
 
     <div class="scroll-text">
@@ -59,35 +66,106 @@
     </div>
 
     <section class="tienda" id="productos">
+        <div class="container">
+            <h2>Nuestros productos</h2>
+            <p>Encuentra un detalle especial para cada ocasión.</p>
 
-    <h2>Nuestros productos</h2>
-    <p>Encuentra un detalle especial para cada ocasión.</p>
+            <div class="selector-categorias">
+                <ul class="categorias">
+                    <li><button class="boton-categoria activo" type="button" data-categoria="Todo">Todo</button></li>
+                    <li><button class="boton-categoria" type="button" data-categoria="Decoración">Decoración</button></li>
+                    <li><button class="boton-categoria" type="button" data-categoria="Papelería">Papelería</button></li>
+                    <li><button class="boton-categoria" type="button" data-categoria="Accesorios">Accesorios</button></li>
+                </ul>
+            </div>
 
-    <div class="selector-categorias">
-        <ul class="categorias">
-            <li><button class="boton-categoria activo" type="button" data-categoria="Todo">Todo</button></li>
-            <li><button class="boton-categoria" type="button" data-categoria="Decoración">Decoración</button></li>
-            <li><button class="boton-categoria" type="button" data-categoria="Papelería">Papelería</button></li>
-            <li><button class="boton-categoria" type="button" data-categoria="Accesorios">Accesorios</button></li>
-        </ul>
-    </div>
+            <div class="catalogo" id="catalogo" aria-live="polite"></div>
+        </div>
+    </section>
 
-    <div class="catalogo" id="catalogo"></div>
-
+    <section class="contacto" id="contacto">
+        <div class="container text-center">
+            <h2>¿Tienes una idea especial?</h2>
+            <p>Cuéntanos qué detalle estás buscando y te ayudaremos a encontrarlo.</p>
+            <button class="btn contacto-boton" type="button" data-bs-toggle="modal" data-bs-target="#contactoModal">Escríbenos</button>
+        </div>
     </section>
 
     <footer>
-        <h2>Síguenos</h2>
-        <ul>
-            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-            <li><a href="https://x.com/" target="_blank">X</a></li>
-        </ul>
-        <hr>
-        <p>Derechos reservados Producto Integrador de Aprendizaje de Diseño de Interfaces Web 2026</p>
+        <div class="container">
+            <h2>Síguenos</h2>
+            <ul>
+                <li><a href="https://www.instagram.com/cruzzbd_?evlk=ZWFjdWxoemhwNGlt" target="_blank" rel="noreferrer">Instagram</a></li>
+                <li><a href="https://www.instagram.com/cruzzbd_?evlk=ZWFjdWxoemhwNGlt" target="_blank" rel="noreferrer">Facebook</a></li>
+                <li><a href="https://www.instagram.com/cruzzbd_?evlk=ZWFjdWxoemhwNGlt" target="_blank" rel="noreferrer">X</a></li>
+                <li><a href="https://www.instagram.com/cruzzbd_?evlk=ZWFjdWxoemhwNGlt" target="_blank" rel="noreferrer">Contacto</a></li>
+            </ul>
+            <hr>
+            <p>Derechos reservados · Producto Integrador de Aprendizaje de Diseño de Interfaces Web 2026</p>
+        </div>
     </footer>
-<div class="toast" id="toast"></div>
-<a class="btn-up" id="btn-up" href="#start">⬆   </a>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <a class="btn-up" id="btn-up" href="#start" aria-label="Volver al inicio">↑</a>
+
+    <div class="modal fade tienda-modal" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="carritoModalLabel">Tu carrito</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="lista-carrito" class="lista-carrito"></div>
+                    <div id="carrito-vacio" class="carrito-vacio">Tu carrito está vacío. Agrega algo hecho con cariño.</div>
+                    <div class="carrito-total"><span>Total</span><strong id="total-carrito">$0.00</strong></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Seguir comprando</button>
+                    <button class="btn btn-primary boton-comprar" id="confirmar-compra" type="button" disabled>Finalizar pedido de prueba</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade tienda-modal" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <p class="modal-kicker">La Tiendita Creativa</p>
+                        <h2 class="modal-title" id="contactoModalLabel">Hablemos de tu idea</h2>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-contacto" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="contacto-nombre">Nombre</label>
+                            <input class="form-control" id="contacto-nombre" name="nombre" type="text" required minlength="2">
+                            <div class="invalid-feedback">Escribe tu nombre para continuar.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="contacto-correo">Correo electrónico</label>
+                            <input class="form-control" id="contacto-correo" name="correo" type="email" required>
+                            <div class="invalid-feedback">Escribe un correo válido.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="contacto-mensaje">¿Qué detalle tienes en mente?</label>
+                            <textarea class="form-control" id="contacto-mensaje" name="mensaje" rows="4" required minlength="10"></textarea>
+                            <div class="invalid-feedback">Cuéntanos un poco más (al menos 10 caracteres).</div>
+                        </div>
+                        <button class="btn btn-primary w-100" type="submit">Enviar mensaje</button>
+                    </form>
+                    <p class="formulario-confirmacion d-none" id="contacto-confirmacion" role="status" aria-live="polite">
+                        ¡Gracias! El formulario es una demostración y no envía datos a un servidor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@
 }
 
 .hero-text h1 {
-    font-size: 80px;
+    font-size: clamp(48px, 6vw, 80px);
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -34,7 +34,7 @@
     font-weight: 500;
     font-style: normal;
     margin-top: 0px;
-    font-size: 50px;
+    font-size: clamp(30px, 4vw, 50px);
 }
 
 .welcome span {
@@ -57,7 +57,7 @@
 .scroll-text {
     text-align: center;
     color: var(--cafe);
-    margin-top: 60px;
+    margin-top: 40px;
     font-size: 25px;
 }
 
@@ -69,18 +69,54 @@
     font-size: 38px;
 }
 
-footer hr{
-    border:none;
+footer hr {
+    border: none;
     height: 1px;
     background-color: var(--terracota);
+    opacity: 0.6;
 }
 
 .menu-opciones {
-    display: flex;
-    gap: 25px;
     white-space: nowrap;
-    margin-right: 20px;
     transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-opciones .navbar-nav {
+    gap: 8px;
+}
+
+.menu .nav-link {
+    padding: 7px 10px;
+    border-radius: 20px;
+    color: var(--crema);
+}
+
+.menu .nav-link:hover,
+.menu .nav-link:focus {
+    color: var(--blanco);
+    background: rgba(245, 235, 221, 0.14);
+}
+
+.menu-toggle {
+    display: none;
+    border-color: rgba(245, 235, 221, 0.45);
+}
+
+.modo-toggle {
+    padding: 7px 10px;
+    border: 0;
+    background: transparent;
+    color: var(--crema);
+    font-size: 0.9rem;
+}
+
+.menu.menu-colapsado {
+    justify-content: center;
+    padding: 0;
+}
+
+.menu.menu-colapsado .menu-opciones {
+    display: none !important;
 }
 
 .menu a {
@@ -94,7 +130,10 @@ footer hr{
     right: 7px;
     background: var(--oliva);
     border-radius: 50%;
-    padding: 5px;
+    min-width: 20px;
+    padding: 2px 5px;
+    color: var(--blanco);
+    text-align: center;
     font-size: 12px;
 }
 
@@ -107,6 +146,15 @@ footer hr{
 .tienda h2 {
     font-size: 40px;
     margin-bottom: 10px;
+}
+
+.producto-categoria {
+    margin-bottom: 7px;
+    color: var(--oliva);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .producto img {
@@ -140,6 +188,32 @@ footer hr{
     font-size: 16px;
 }
 
+.btn-primary,
+.contacto-boton {
+    border-color: var(--terracota);
+    background-color: var(--terracota);
+    color: var(--blanco);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.contacto-boton:hover,
+.contacto-boton:focus {
+    border-color: var(--cafe);
+    background-color: var(--cafe);
+    color: var(--blanco);
+}
+
+.contacto h2 {
+    margin-bottom: 10px;
+    color: var(--cafe);
+}
+
+.contacto-boton {
+    margin-top: 10px;
+    padding: 10px 24px;
+}
+
 .selector-categorias ul{
     padding: 0px;
     display: flex;
@@ -168,4 +242,109 @@ footer hr{
 .toast.encendido{
     opacity: 1;
     visibility: visible;
+}
+
+footer h2 {
+    font-size: 1.7rem;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 26px;
+    margin: 12px 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+footer a {
+    color: var(--cafe);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--terracota);
+    text-decoration: underline;
+}
+
+.modal-kicker {
+    margin-bottom: 4px;
+    color: var(--oliva);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.tienda-modal .modal-title {
+    color: var(--cafe);
+    font-family: "Playfair Display", serif;
+}
+
+.tienda-modal .form-control {
+    border-color: var(--arena);
+    background-color: var(--blanco);
+    color: var(--cafe);
+}
+
+.tienda-modal .form-control:focus {
+    border-color: var(--oliva);
+    box-shadow: 0 0 0 0.2rem rgba(120, 129, 90, 0.2);
+}
+
+.formulario-confirmacion {
+    margin: 8px 0;
+    border-radius: 10px;
+    padding: 16px;
+    background: rgba(120, 129, 90, 0.16);
+    color: var(--cafe);
+}
+
+body.modo-noche .menu {
+    background-color: #302d24;
+}
+
+body.modo-noche .menu .nav-link,
+body.modo-noche .menu .modo-toggle,
+body.modo-noche .menu a {
+    color: #f0ece2;
+}
+
+body.modo-noche .topbar {
+    background-color: #191813;
+}
+
+body.modo-noche .welcome,
+body.modo-noche .welcome p,
+body.modo-noche .tienda,
+body.modo-noche .contacto h2 {
+    color: var(--cafe);
+}
+
+body.modo-noche .producto {
+    border-color: rgba(240, 236, 226, 0.12);
+    background-color: #24231f;
+}
+
+body.modo-noche .producto h3,
+body.modo-noche .producto p,
+body.modo-noche .precio {
+    color: var(--cafe);
+}
+
+body.modo-noche .selector-categorias {
+    background-color: #24231f;
+}
+
+body.modo-noche .contacto {
+    background-color: #24231f;
+}
+
+body.modo-noche footer {
+    background-color: #29271f;
+}
+
+body.modo-noche .tienda-modal .btn-close {
+    filter: invert(1) grayscale(100%);
 }

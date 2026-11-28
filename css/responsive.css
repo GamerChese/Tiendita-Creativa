@@ -1,10 +1,158 @@
-@media (max-width: 900px) {
+@media (max-width: 991.98px) {
+    .menu {
+        height: 55px;
+        padding: 0 4px 0 10px;
+        overflow: visible;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-right: auto;
+    }
+
+    .menu-opciones {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 16px;
+        padding: 10px 14px;
+        background-color: var(--cafe);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .menu-opciones .navbar-nav {
+        align-items: stretch !important;
+        gap: 2px;
+    }
+
+    .menu .nav-link,
+    .modo-toggle {
+        width: 100%;
+        text-align: left;
+    }
+
+    body.modo-noche .menu-opciones {
+        background-color: #302d24;
+    }
+
+    .topbar {
+        min-height: 540px;
+    }
+
+    .hero-banner {
+        width: 50%;
+    }
+
     .catalogo {
         grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
     }
 }
 
 @media (max-width: 550px) {
+    .topbar {
+        min-height: 0;
+        flex-direction: column;
+        justify-content: center;
+        gap: 14px;
+        padding: 110px 20px 28px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .hero-text {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(42px, 13vw, 62px);
+    }
+
+    .hero-text p {
+        margin-bottom: 0;
+    }
+
+    .hero-banner {
+        width: 100%;
+        max-height: 330px;
+        object-fit: contain;
+    }
+
+    .welcome {
+        padding: 0 18px;
+        font-size: 19px;
+    }
+
+    .welcome p {
+        font-size: 17px;
+    }
+
+    .visit-counter {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .welcome br {
+        display: none;
+    }
+
+    .tienda {
+        padding: 42px 14px;
+    }
+
+    .catalogo {
+        grid-template-columns: 1fr;
+        max-width: 390px;
+        gap: 18px;
+    }
+
+    .selector-categorias {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .selector-categorias ul {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .boton-categoria {
+        padding: 7px 9px;
+    }
+
+    .fila-carrito {
+        grid-template-columns: 48px minmax(0, 1fr) auto;
+        gap: 8px;
+    }
+
+    .fila-carrito img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .fila-carrito .quitar-producto {
+        grid-column: 2 / -1;
+        justify-self: start;
+    }
+
+    .tienda-modal .modal-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tienda-modal .modal-footer .btn {
+        width: 100%;
+    }
+
+    .btn-up {
+        bottom: 16px;
+        left: 14px;
+    }
+
     .catalogo {
         grid-template-columns: 1fr;
     }

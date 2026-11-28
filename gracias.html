@@ -1,18 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiendita Creativa - Gracias por tu compra</title>
+    <meta name="description" content="Gracias por apoyar el trabajo artesanal de La Tiendita Creativa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gracias.css">
+    <title>Gracias por tu pedido · La Tiendita Creativa</title>
 </head>
-<body>
-    <h1>¡¡Gracias por tu compra!!</h1>
-    <p>Con tu compra estas apoyando a pequeños emprendedores a cumplir su sueño</p>
-    <br>
-    <p>
-        Si tienes problemas con tu envio por favor ponte en contacto con nosotros,
-        haremos todo lo posible para solucionarlo.
-    </p>
-        /* Boton que lleve a el apartado de contacto */
+<body class="pagina-gracias">
+    <main class="gracias-contenedor container">
+        <a class="gracias-marca" href="index.html#start">La Tiendita Creativa</a>
+        <section class="gracias-tarjeta" aria-labelledby="gracias-titulo">
+            <div class="gracias-flor" aria-hidden="true">✿</div>
+            <p class="gracias-kicker">Hecho con cariño</p>
+            <h1 id="gracias-titulo">¡Gracias por tu pedido!</h1>
+            <p class="gracias-mensaje">Con tu compra apoyas a pequeños emprendedores y al trabajo artesanal hecho con dedicación.</p>
+
+            <div class="resumen-pedido d-none" id="resumen-pedido" aria-live="polite">
+                <h2>Resumen de tu pedido</h2>
+                <ul id="productos-pedido"></ul>
+                <p class="resumen-total"><span>Total</span><strong id="total-pedido"></strong></p>
+            </div>
+
+            <div class="gracias-acciones">
+                <a class="btn btn-primary" href="index.html#productos">Volver a la tienda</a>
+                <a class="gracias-contacto" href="index.html#contacto">Ir a contacto</a>
+            </div>
+        </section>
+    </main>
+    <script src="js/gracias.js"></script>
 </body>
 </html>
