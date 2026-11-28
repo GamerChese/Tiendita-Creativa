@@ -1,0 +1,25 @@
+.menu:hover {
+    width: 260px !important;
+}
+
+.menu:hover .menu-opciones {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    visibility: visible !important;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.agregar:hover {
+    background-color: var(--cafe);
+}
+
+.boton-categoria:hover:not(.activo){
+    background: var(--crema);
+}
+
+.btn-up:hover{
+    background: var(--oliva);
+}

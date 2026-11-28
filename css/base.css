@@ -1,0 +1,25 @@
+/* Paleta de colores */
+:root {
+    --crema: #F5EBDD;
+    --arena: #DCC4A8;
+    --terracota: #A46B55;
+    --oliva: #78815A;
+    --cafe: #543526;
+    --blanco: #FFFDF9;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+body{
+    background-image: url(https://www.tilingtextures.com/wp-content/uploads/2025/04/smdi5QnHGn.jpg);
+    background-repeat: repeat;
+    background-color: var(--crema);
+    font-family: 'Lato', sans-serif;
+}
+

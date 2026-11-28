@@ -13,14 +13,12 @@ function actualizarMenu() {
     opciones.style.opacity = 1 - progreso;
     opciones.style.transform = `translateX(${progreso * 50}px)`;
     opciones.style.visibility = progreso === 1 ? "hidden" : "visible";
-
 }
 
 window.addEventListener("scroll", actualizarMenu);
 window.addEventListener("resize", actualizarMenu);
 
 actualizarMenu();
-
 
 const productos = [
     {
@@ -92,24 +90,23 @@ const productos = [
         nombre: "Llavero personalizado",
         descripcion: "Llavero de resina con detalles decorativos.",
         precio: 65,
-        categoria: "Accesorios",
+        categoria: "Accesorios", 
         imagen: "llavero-personalizado.webp"
     }
 ];
 
 const catalogo = document.getElementById("catalogo");
 
-function mostrarProductos() {
-
+function mostrarProductos(listaProductos) {
     catalogo.innerHTML = "";
 
-    productos.forEach(producto => {
+    listaProductos.forEach(producto => {
 
         catalogo.innerHTML += `
             <div class="producto">
 
                 <img src="assets/images/products/${producto.imagen}"
-                     alt="${producto.nombre}">
+                    alt="${producto.nombre}">
 
                 <h3>${producto.nombre}</h3>
 
@@ -117,7 +114,7 @@ function mostrarProductos() {
 
                 <span class="precio">$${producto.precio}.00</span>
 
-                <button class="agregar">
+                <button class="agregar" data-producto="${producto.id}">
                     Agregar al carrito
                 </button>
 
@@ -125,7 +122,79 @@ function mostrarProductos() {
         `;
 
     });
-
 }
 
-mostrarProductos();
+mostrarProductos(productos);
+
+const botones = document.querySelectorAll(".boton-categoria");
+
+botones.forEach(boton => {
+    boton.addEventListener("click", () => {
+        botones.forEach(b => 
+            b.classList.remove("activo"));
+        boton.classList.add("activo");
+        const state = boton.dataset.categoria
+        if (state === "Todo"){
+            mostrarProductos(productos);
+        }
+        else{
+            const lista = productos.filter(producto => producto.categoria === state);
+            mostrarProductos(lista);
+        }
+    });
+});
+
+const carrito = [];
+
+catalogo.addEventListener("click", (e) => {
+    if (e.target.classList.contains("agregar")){
+        const read = e.target.dataset.producto;
+        const id = Number(read);
+        const compra = productos.find(producto =>
+            producto.id === id
+        )
+        const enCarrito = carrito.find(producto =>
+            producto.id === id
+        )
+
+        if(enCarrito){
+            enCarrito.cantidad += 1;
+        }
+        else{
+            carrito.push({...compra, cantidad: 1});
+            
+        }
+    actualizarContador();
+    activarToast();
+    console.log(carrito);
+    }
+});    
+const counter = document.getElementById("contador")
+
+function actualizarContador(){
+    let total = 0;
+    carrito.forEach(producto =>{
+        total = total + producto.cantidad;
+    });
+    counter.textContent = total;
+}
+
+let visitas_crudo = localStorage.getItem("visitas");
+let visitas_numero = Number(visitas_crudo) ;
+let visitas_real = visitas_numero + 1;
+
+localStorage.setItem("visitas", visitas_real);
+
+const visitas_texto = document.getElementById("visitas");
+visitas_texto.textContent = visitas_real;
+
+
+const texto_toast = "¡¡Articulo agregado al carrito exitosamente!!";
+const elemento_toast = document.getElementById("toast");
+
+function activarToast(){
+    elemento_toast.textContent = texto_toast;
+    elemento_toast.classList.add("encendido")
+    setTimeout(() =>
+    elemento_toast.classList.remove("encendido"),1800)
+}

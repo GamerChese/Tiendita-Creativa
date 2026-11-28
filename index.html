@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>La Tiendita Creativa</title>
 </head>
 <body>
     <nav class="menu" id="menu">
@@ -17,6 +22,7 @@
 
         <button class="carrito" aria-label="Ver carrito">
             <img src="assets/images/cart.svg" alt="Carrito">
+            <span class="contador" id="contador">0</span>
         </button>
 
     </nav>
@@ -24,7 +30,7 @@
     <div class="topbar" id="start"> 
         <div class="hero-text">
             <h1>La Tiendita Creativa</h1>
-            <p>Creatividad en cada detalle</p>
+            <p class = "dancing-script-text">Creatividad en cada detalle</p>
         </div>
         
         <img src="assets/images/hero-banner.webp" alt="" class="hero-banner">
@@ -43,6 +49,8 @@
         </p>
 
         <p>Pasión · Creatividad · Originalidad</p>
+        <br>
+        <p>Número de visitas a esta tienda: <span id="visitas">0</span></p>
     </div>
 
     <div class="scroll-text">
@@ -55,10 +63,31 @@
     <h2>Nuestros productos</h2>
     <p>Encuentra un detalle especial para cada ocasión.</p>
 
+    <div class="selector-categorias">
+        <ul class="categorias">
+            <li><button class="boton-categoria activo" type="button" data-categoria="Todo">Todo</button></li>
+            <li><button class="boton-categoria" type="button" data-categoria="Decoración">Decoración</button></li>
+            <li><button class="boton-categoria" type="button" data-categoria="Papelería">Papelería</button></li>
+            <li><button class="boton-categoria" type="button" data-categoria="Accesorios">Accesorios</button></li>
+        </ul>
+    </div>
+
     <div class="catalogo" id="catalogo"></div>
 
-</section>
+    </section>
 
+    <footer>
+        <h2>Síguenos</h2>
+        <ul>
+            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://x.com/" target="_blank">X</a></li>
+        </ul>
+        <hr>
+        <p>Derechos reservados Producto Integrador de Aprendizaje de Diseño de Interfaces Web 2026</p>
+    </footer>
+<div class="toast" id="toast"></div>
+<a class="btn-up" id="btn-up" href="#start">⬆   </a>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,171 @@
+.btn-up{
+    color: var(--blanco);
+    font-size: 35px;
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    background: var(--terracota);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+
+.hero-text {
+    color: var(--crema);
+    margin-left: 30px;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.hero-text p {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 0px;
+    font-size: 50px;
+}
+
+.welcome span {
+    color: var(--oliva);
+    font-size: 20px;
+}
+
+.welcome h2 {
+    margin-top: 0;
+    color: var(--oliva);
+    font-size: 30px;
+}
+
+.welcome p {
+    margin-top: 5px;
+    color: var(--cafe);
+    font-size: 20px;
+}
+
+.scroll-text {
+    text-align: center;
+    color: var(--cafe);
+    margin-top: 60px;
+    font-size: 25px;
+}
+
+.scroll-text p {
+    margin-bottom: 5px;
+}
+
+.scroll-text span {
+    font-size: 38px;
+}
+
+footer hr{
+    border:none;
+    height: 1px;
+    background-color: var(--terracota);
+}
+
+.menu-opciones {
+    display: flex;
+    gap: 25px;
+    white-space: nowrap;
+    margin-right: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu a {
+    color: var(--crema);
+    text-decoration: none;
+}
+
+.carrito span{
+    position: absolute;
+    top: 25px;
+    right: 7px;
+    background: var(--oliva);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.carrito img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.tienda h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.producto img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.producto h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.precio {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+    margin-top: auto;
+}
+
+.agregar {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--terracota);
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.selector-categorias ul{
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 0;
+    list-style: none;
+}
+
+.boton-categoria{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    transition: 500ms;
+    background: transparent;
+    font-family: inherit;
+    cursor: pointer;
+    color: var(--cafe);
+}
+
+.boton-categoria.activo{
+    background: var(--terracota);
+    color: var(--blanco);
+}
+
+.toast.encendido{
+    opacity: 1;
+    visibility: visible;
+}
